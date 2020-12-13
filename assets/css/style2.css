@@ -1,0 +1,542 @@
+/*FONTS*/
+
+@font-face {
+  font-family: Proxima Nova Bold;
+  src: url(/fonts/proximanova-bold.otf);
+}
+
+@font-face {
+  font-family: Proxima Nova Regular;
+  src: url(/fonts/ProximaNova-Regular.otf);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*side nav menu*/
+
+li {
+  font-family: "Proxima Nova Bold";
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.main-container {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  padding-left: 200px;
+}
+
+.hamburger-container {
+  background: #f8f7f7;
+  padding: 13px 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  transition: background-color 0.5s ease;
+}
+
+.hamburger-container:hover {
+  cursor: pointer;
+  background: #efefef;
+}
+
+.hamburger {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #666666;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: opacity 0.5s;
+  background: #ffffff;
+}
+
+.hamburger:hover {
+  opacity: 0.8;
+}
+
+.hamburger i {
+  height: 2px;
+  background: #444;
+}
+
+.menu {
+  background: #0a1151;
+  color: white;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  z-index: 2000;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-width: none;
+}
+
+.menu-list-item {
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.menu.closed {
+  overflow: visible;
+}
+
+/* Menu li hover */
+
+.menu.closed li:hover .menu-tooltip {
+  opacity: 1;
+  font-size: 12px;
+}
+
+.menu-tooltip {
+  position: absolute;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background: #eee;
+  border: 1px solid #eee;
+  opacity: 0;
+  transition: 0.3s;
+  line-height: 16px;
+  top: 18px;
+  right: -10px;
+  transform: translateX(100%);
+  font-size: 0;
+  font-weight: normal;
+  color: black;
+  font-style: normal;
+}
+
+.menu ul.links {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul.links li {
+  border-bottom: 1px solid #030826 !important;
+  line-height: 59px;
+  font-size: 16px;
+  background-color: #0a1151;
+  transition: background-color 0.5s ease;
+}
+
+.menu ul.links li:hover {
+  cursor: pointer;
+  background-color: #6d7599;
+}
+
+.menu li .side-menu-item img {
+  transition: 0.3s;
+}
+
+.menu li > a,
+.menu li > a:hover {
+  color: white;
+  padding: 4px 25px 0;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li > a:hover {
+  text-decoration: none;
+}
+
+.side-menu-item {
+  padding-left: 5px;
+}
+
+.menu-icon-container {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  background: #0a1151;
+  margin-right: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+
+.menu-icon {
+  width: 100%;
+  display: block;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+#forms-item {
+  background-color: #6d7599;
+}
+
+/* Header */
+
+.flex {
+  display: flex;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+  background: #f8f7f7;
+}
+
+/*.logo,*/
+
+.logo {
+  align-self: flex-start;
+  padding: 10px 0px 0px 25px;
+  display: flex;
+  align-items: center;
+}
+
+.midway-logo {
+  width: 120px !important;
+}
+
+.user-icon {
+  height: 25px;
+  margin-top: 8px;
+}
+
+p img:last-child {
+  display: none;
+}
+
+p:hover img:last-child {
+  display: block;
+}
+
+p:hover img:first-child {
+  display: none;
+}
+
+.cart-icon {
+  width: 40px !important;
+  padding-top: 7px;
+}
+
+.hover-image,
+.profile-icon {
+  transition: 0.5s ease;
+}
+
+.hover-image-container {
+  position: relative;
+}
+
+/*site title*/
+
+.logo:hover .hover-image,
+.hover-image-container:hover .hover-image {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.icon-container {
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0px 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 115px;
+}
+
+.icon-description {
+  padding-bottom: 5px;
+  font-family: "Proxima Nova Regular";
+  line-height: 1;
+  padding-top: 3px;
+}
+
+.description-container {
+  font-family: "Proxima Nova Regular";
+}
+
+.icon-description-cart-total {
+  padding: 7px 15px 0 15px;
+  text-align: right;
+}
+
+/* Main content */
+
+.main-content {
+  flex-grow: 1;
+}
+
+main {
+  background: #f8f9fa;
+  padding: 20px;
+  height: 100vh;
+}
+
+main h3 {
+  color: #020202;
+  font-family: "Proxima Nova Bold";
+  padding: 5px 0 5px 0;
+}
+
+.page-title-container {
+  display: flex;
+  height: 45px;
+}
+
+.home-title-main {
+  display: flex;
+}
+
+.product-suggestion-form-container,
+.contact-us-form-container {
+  border: 1px solid #c6c6c6;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f7f7;
+  cursor: pointer;
+}
+
+.product-suggestion-form-container:hover,
+.contact-us-form-container:hover {
+  background-color: #e2e2e2;
+  transition: 0.3s ease-in-out;
+}
+
+.form-title {
+  font-family: "Proxima Nova Regular";
+}
+
+.form-div-outer {
+  margin: 10px 0;
+}
+
+.form-div-top,
+.form-div-bottom {
+  background-color: #f8f7f7;
+  border: 1px solid #c6c6c6;
+  border-top: none !important;
+  padding: 15px;
+}
+
+/*initial display*/
+
+.form-div-top {
+  display: none;
+}
+
+.form-div-bottom {
+  display: none;
+}
+
+.form-div-top-active {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.form-div-bottom-active {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.form-input {
+  margin: 10px 0;
+  padding: 5px;
+  border: none;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.form-input-textarea {
+  text-align: left;
+  padding: 18px 0 0 5px;
+  padding-bottom: 150px;
+  height: 10px;
+}
+
+.contact-reason-title {
+  color: #000000;
+  font-family: "Proxima Nova Regular";
+  font-size: 16px;
+}
+
+input[type="radio"] {
+  float: left;
+}
+
+.input-group {
+  color: #000000;
+}
+
+.input-group-feedback {
+  margin-top: 5px;
+}
+
+label {
+  margin-left: 30px;
+  display: block;
+  font-family: "Proxima Nova Regular";
+}
+
+.radio {
+  margin-top: 6px;
+}
+
+.radiolist {
+  list-style-type: none;
+  padding: 15px 15px 0 15px;
+}
+
+.radiolist li:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.contact-reason-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contact-reason-title-container {
+  display: flex;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+/*toggle top*/
+
+.dropdown-arrow-top {
+  display: block;
+}
+
+.dropdown-arrow-up-top {
+  display: none;
+}
+
+/*toggle bottom*/
+
+.dropdown-arrow-bottom {
+  display: block;
+}
+
+.dropdown-arrow-up-bottom {
+  display: none;
+}
+
+/*end form toggle*/
+
+.submit-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-button-1,
+.submit-button-2 {
+  background-color: #f3c45c;
+  border-radius: 3px;
+  border: none;
+  font-family: "Proxima Nova Bold";
+  padding: 5px 15px;
+}
+
+.submit-button-1:hover,
+.submit-button-2:hover {
+  background-color: #ddad4e;
+  transition: 0.5s ease-in-out;
+}
+
+.submit-button-1 {
+  margin-top: 5px;
+}
+
+.submit-button-2 {
+  margin-top: 15px;
+}
+
+.thank-you-message {
+  font-family: "Proxima Nova Regular";
+  color: #cd2026;
+}
+
+/*responsive styles*/
+
+/*tablet*/
+@media screen and (max-width: 768px) {
+  .hamburger-container {
+    background: white;
+    padding: 15px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-right: 1px solid rgba(0, 0, 0, 0.125);
+    transition: background-color 0.5s ease;
+    height: 78px;
+  }
+  .main-container {
+    width: 100%;
+  }
+  header {
+    height: 80px;
+  }
+  .logo {
+    align-self: flex-start;
+    padding: 10px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+  }
+  .icon-container {
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+.product-suggestion-form-container.active {
+  background-color: #e2e2e2;
+}
+.contact-us-form-container.active {
+  background-color: #e2e2e2;
+}
