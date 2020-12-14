@@ -14,11 +14,7 @@
   <link rel="stylesheet" href="assets/css/style2.css">
   <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<<<<<<< HEAD
-=======
-  <script src="assets/js/script.js"></script>
->>>>>>> 566de806705d1556abe86f383c1498d447832892
-</head>
+  </head>
 
 <body>
   <div class="main-container">
@@ -163,18 +159,18 @@
             <span class="dropdown-arrow-up-top"><i class="fas fa-caret-up"></i></span>
           </div>
           <div class="form-div-top">
-            <form class="form-div-inner-top" action="" method="post" id="firstForm">
+            <form class="form-div-inner-top" action="#" method="post" id="firstForm">
               <span class="input-group input-group-name">
-                <input type="text" placeholder="Name *" class="form-input" required></input>
+                <input required type="text" placeholder="Name *" class="form-input"  required/>
               </span>
               <span class="input-group input-group-email-address">
-                <input type="text" placeholder="Email Address *" class="form-input" required></input>
+                <input required type="text" placeholder="Email Address *" class="form-input" required/>
               </span>
               <span class="input-group description-of-product-desired">
-                <input type="textarea" placeholder="Description of product desired *" class="form-input form-input-textarea" required></input>
+                <input required type="textarea" placeholder="Description of product desired *" class="form-input form-input-textarea" required/>
               </span>
               <div class="submit-button-container">
-                <input type="button" class="submit-button-1 topFormsubmit" value="Submit">
+                <input type="submit" class="submit-button-1 topFormsubmit" id="top-submit-button" value="Submit" />
               </div>
             </form>
           </div>
@@ -186,12 +182,12 @@
             <span class="dropdown-arrow-up-bottom"><i class="fas fa-caret-up"></i></span>
           </div>
           <div class="form-div-bottom">
-            <form class="form-div-inner-bottom" action="" method="post" id="secondForm">
+            <form class="form-div-inner-bottom" action="#" method="post" id="secondForm">
               <span class="input-group input-group-name">
-                <input type="text" placeholder="Name *" class="form-input" required></input>
+                <input type="text" placeholder="Name *" class="form-input" required>
               </span>
               <span class="input-group input-group-email-address">
-                <input type="text" placeholder="Email Address *" class="form-input" required></input>
+                <input type="text" placeholder="Email Address *" class="form-input" required>
               </span>
               <span class="input-group input-group-contact-reason">
                 <div class="contact-reason-container">
@@ -208,10 +204,10 @@
                 </div>
               </span>
               <span class="input-group input-group-feedback">
-                <input type="text" placeholder="Feedback *" class="form-input" required></input>
+                <input type="text" placeholder="Feedback *" class="form-input" required>
               </span>
               <div class="submit-button-container">
-                <input type="button" class="submit-button-2 secondFormsubmit" value="Submit">
+                <input type="submit" class="submit-button-2 secondFormsubmit" id="bottom-submit-button" value="Submit">
               </div>
             </form>
           </div>
@@ -241,21 +237,23 @@
         $(".dropdown-arrow-up-bottom").toggle();
       })
     });
-    $('.topFormsubmit').on('click',function(){
+    $('#firstForm').submit(function(event){    
+      event.preventDefault();
+      $("#top-submit-button").attr("disabled",true);
       $(".form-div-top").prepend("<span class='thank-you-message'>Thank you for submitting. We will be in contact shortly!</span>");
       setTimeout(function(){
         $(".thank-you-message").fadeOut();
-        $("#firstForm").submit();
+        $("#top-submit-button").removeAttr("disabled");
       },4000);
-      return false;
     });
-    $('.secondFormsubmit').on('click',function(){
+    $('#secondForm').on('submit',function(){
+      event.preventDefault();
+      $("#bottom-submit-button").attr("disabled",true);
       $(".form-div-bottom").prepend("<span class='thank-you-message'>Thank you for submitting. We will be in contact shortly!</span>");
       setTimeout(function(){
         $(".thank-you-message").fadeOut();
-        $("#secondForm").submit();
+        $("#bottom-submit-button").removeAttr("disabled");
       },4000);
-      return false;
     })
     function closeBottomFormWhenTrouble() {
       $(".contact-us-form-container").toggleClass('active');
