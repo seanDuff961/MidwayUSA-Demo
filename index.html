@@ -246,7 +246,7 @@
         $("#top-submit-button").removeAttr("disabled");
       },4000);
     });
-    $('#secondForm').on('submit',function(){
+    $('#secondForm').on('submit',function(event){
       event.preventDefault();
       $("#bottom-submit-button").attr("disabled",true);
       $(".form-div-bottom").prepend("<span class='thank-you-message'>Thank you for submitting. We will be in contact shortly!</span>");
